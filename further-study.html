@@ -49,14 +49,21 @@
     "use strict";
 
     $("#coffee_image").attr("src", "static/coffee_beans.jpg");
-    // var displayRevenue = $("#revenue");
     var drinksOrdered = []
-
 
     $('#coffee_image').on("click", function() {makeCoffee('brew')
                                     });
 
+    $('#espresso').on('click', function() {makeCoffee('espresso')
+                                });
 
+    $('#latte').on('click', function() {makeCoffee('latte')
+                            });
+
+    $('#hot-chocolate').on('click', function() {makeCoffee('hot chocolate')
+                            });
+
+    // $('img').fadeIn(1250);
 
     function makeCoffee(drinkType) {
          $("#coffee_image").attr("src", "static/coffee_machine.jpg");
@@ -69,27 +76,11 @@
              $('#coffee_image').attr("src", "static/coffee_beans.jpg");
          }, 4000);
 
-
-        drinksOrdered.push(drinkType)
-        console.log(drinksOrdered)
-        var total = revenue().toFixed(2)
-        $('#revenue').html('$'+total)
+        drinksOrdered.push(drinkType);
+        console.log(drinksOrdered);
+        var total = revenue().toFixed(2);
+        $('#revenue').html('$' + total);
     }
-
-
-    // Create variables for Espresso, Latte, and Hot Chocolate;
-    // and add an event listener to each that calls makeCoffee.
-
-
-    $('#espresso').on('click', function() {makeCoffee('espresso')
-                                });
-
-
-    $('#latte').on('click', function() {makeCoffee('latte')
-                            });
-
-    $('#hot-chocolate').on('click', function() {makeCoffee('hot chocolate')
-                            });
 
 
 
